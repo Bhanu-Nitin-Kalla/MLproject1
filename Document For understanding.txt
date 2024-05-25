@@ -1,0 +1,68 @@
+
+step1: we are installing open cv on the computer using a command prompt 
+
+pip install opencv-python
+
+
+
+step 2: we are using a har cascade classifier 
+what is a harcascade classifier refer to the below doc 
+https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
+
+
+
+step3: lets write a code to  detect  number  of faces
+        for that we define a function  named  "detect_faces"
+
+
+step 4: loading the image:
+         
+        imread() method loads an image from the specified file. 
+       
+        image = cv2.imread(image_path)
+
+        we specify the path of the image on the image_path
+
+
+       
+step5: gray scale conversion 
+
+       Grayscale is used for assessing the color shading in between products and the customer's approval sample 
+
+
+     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+
+step 6:  
+detection if there are multi faces 
+
+
+Now we must call our classifier function, passing it some very important parameters, as scale factor, number of neighbors and minimum size of the detected face.
+eg code to understand the code
+ faces = faceCascade.detectMultiScale(
+    gray,     
+    scaleFactor=1.2,
+    minNeighbors=5,     
+    minSize=(20, 20)
+)
+Where, .gray is the input grayscale image. .scaleFactor is the parameter specifying how much the image size is reduced at each image scale. It is used to create the scale pyramid. .minNeighbors is a parameter specifying how many neighbors each candidate rectangle should have, to retain it. A higher number gives lower false positives. .minSize is the minimum rectangle size to be considered a face.
+
+
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+
+step7: creating boundaries over the detected areas by using bounding boxes 
+
+
+         cv2.rectangle(image, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+
+
+step 8: identifying the images which are displayed or highlighted
+
+
+cv2.imshow('Faces detected', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
