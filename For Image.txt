@@ -1,0 +1,3 @@
+Download an Image: You can download an image from the internet or use one of your own photos. Ensure that the image is in a common format like JPEG (.jpg) or PNG (.png).
+
+Save the Image: Save the downloaded image in the same directory as your Python script. Name it 'sample_image.jpg' or adjust the filename in the function call accordingly.
