@@ -37,7 +37,7 @@ step 6:
 detection if there are multi faces 
 
 
-Now we must call our classifier function, passing it some very important parameters, as scale factor, number of neighbors and minimum size of the detected face.
+ we call our classifier function, passing it some very important parameters, as scale factor, number of neighbors and minimum size of the detected face.
 eg code to understand the code
  faces = faceCascade.detectMultiScale(
     gray,     
